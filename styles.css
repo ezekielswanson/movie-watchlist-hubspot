@@ -1,0 +1,523 @@
+body {
+    margin: 0;
+    font-family: 'Inter', Arial;
+    background: #1C1C1C;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+}
+
+
+
+/* Removing default styles */
+
+input[type="text"],
+button {
+  background: none;       /* Removes the default background */
+  border: none;           /* Removes the default border */
+  margin: 0;              /* Removes the default margin */
+  padding: 0;             /* Removes the default padding */
+  outline: none;          /* Removes the focus outline */
+  box-shadow: none;       /* Removes the box-shadow if any */
+  font-family: inherit;   /* Inherits the font from the parent element */
+  font-size: inherit;     /* Inherits the font size from the parent element */
+  color: inherit;         /* Inherits the font color from the parent element */
+  line-height: inherit;   /* Inherits the line height from the parent element */
+  appearance: none;       /* Removes default styling for elements like buttons */
+  -webkit-appearance: none; /* Same as above for WebKit browsers like Chrome and Safari */
+  -moz-appearance: none;    /* Same as above for Firefox */
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Remove the inner padding and search cancel button in WebKit browsers */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+
+a:visited {
+    color: inherit; 
+}
+
+
+
+
+
+/**** Global Styles ****/   
+
+h1, h2, h3, h4, h5, p {
+    margin: 0px;
+}
+
+
+.movie-list__container {
+    position: relative;
+    width: 75%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+
+
+}
+
+
+.movie-list__body.active {
+    padding: 70px;
+}
+
+.movie-list__body.active.removed {
+    padding: 193px 201px 269px;
+}
+
+
+/**** END Global Styles ****/   
+
+
+
+
+
+/*** Header Styles ***/
+
+.movie-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+    align-items: center;
+    position: relative;
+    padding: 82px 45px 78px;
+    height: 208px;
+    background: url('assets/40637dd9b0240098474b6d8dd9487d8c.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -150px;
+}
+
+
+
+
+.movie-list__header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.63); 
+    z-index: 1; 
+}
+
+.movie-list__header h1, 
+.movie-list__header a {
+    color: #fff;
+    z-index: 3;
+    text-decoration: none;
+}
+
+.movie-list__header h1 {
+    font-size: 42.795px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23.775px; /* 55.556% */
+    letter-spacing: -1.926px;
+}
+
+.movie-list__header a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
+}
+
+
+
+
+/*** End Header Styles ***/
+
+
+
+
+
+/*** Search Form Styles ***/
+
+
+
+.movie-list__form-container {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+}
+
+.movie-list__form-container .movie-list__search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    top: 350px;
+    z-index: 20;
+    width: 70%;  
+    height: 20px;
+    padding: 9px 0px 9px 9px;
+    background: #FFF;
+    border: 1px solid #D1D5DB; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.movie-list__form-container.index .movie-list__search-form {
+    top: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    z-index: 20;
+    width: 70%;  
+    height: 20px;
+    padding: 9px 0px 9px 9px;
+    background: #FFF;
+    border: 1px solid #D1D5DB; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+.movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 300px;
+}
+
+
+.movie-list__form-container .movie-list__search-form button {
+    width: 100%;
+    padding: 9px 11px;
+    background: #F9FAFB;
+    border-left: 1px solid #D1D5DB; 
+    border-radius: 0px 6px 6px 0px;
+    text-align: center;
+}
+
+
+
+/*** End Search Form Styles ***/
+
+
+
+/*** Movie List Body ****/
+
+
+
+
+.movie-list__body {
+    background-color: #fff;
+    padding: 193px 201px 269px;
+
+}
+
+.movie-list__body .movie-list__body--text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.movie-list__body .movie-list__body--text-container h2 {
+    color: #DFDDDD;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28.5px; 
+}
+
+.movie-list__body .movie-list__body--text-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: Center;
+    text-decoration: none;
+    gap: 7px;
+    color: #363636;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px; 
+}
+
+
+.movie-list__body .movie-list__film-icon {
+    text-align: center;
+}
+
+
+.movie-list__body .movie-list__film-icon.remove {
+    display: none;
+
+}
+
+
+
+
+/* Movie list row */
+
+
+.movie-list__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 21px;
+    margin-bottom: 24px;
+}
+
+
+.movie-list__row .movie-list__row--hz-line {
+    position: absolute;
+    bottom: -12px;
+    margin-top: 41px;
+    width: 100%;
+    height: 1.5px;
+    background: #E5E7EB;
+}
+
+/*
+.movie-list__row::after {
+    position: absolute;
+    top: 113px;
+    margin-top: 41px;
+    width: 461px;
+    height: 1.5px;
+    background: #E5E7EB;
+    content: '';
+}
+*/
+
+.movie-list__row img {
+    width: 99px;
+    height: 147.411px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title  {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title h3 {
+    margin-right: 8px;
+    margin-bottom: 11px;
+}
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title svg {
+    margin-right: 4px;
+}
+
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info > p:first-child {
+    margin-right: 19px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info .movie-list__row--text__info--btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    gap: 5px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info--desc {
+    margin-top: 8px;
+}
+
+/*** End Movie List Body ****/
+
+
+
+
+
+
+
+/****** Watchlist CSS *****/   
+
+.watchlist-controls {
+    padding-top: 25px;
+    padding-left: 70px;
+}
+
+.watchlist-controls .movie-list__body--remove-btn {
+    background-color: #2e2e2f;
+    margin-bottom: 40px;    
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-family: "inter", sans-serif;
+    cursor: pointer;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.watchlist-controls .movie-list__body--remove-btn.empty {
+    display: none;
+}
+
+
+
+/****** END Watchlist CSS *****/   
+
+
+
+/**** Loading Animation *****/
+.loader {
+    position: relative;
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #636363;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+ 
+  }
+  
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+
+/**** Media Queries ****/   
+
+
+@media (max-width: 1097px) {
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: 200px;
+    }
+}
+
+@media (max-width: 769px) {
+
+
+    .movie-list__header h1 {
+        line-height: 47.775px;
+    }
+
+    .movie-list__header a {
+        line-height: 31px;
+    }
+
+
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: 80px;
+    }
+}
+
+
+
+
+@media (max-width: 720px) {
+
+    .movie-list__body {
+        padding: 100px;
+        text-align: center;
+    }
+
+    .movie-list__body.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .movie-list__header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .movie-list__header::before {
+        background: transparent;
+    }
+
+    .movie-list__form-container.index .movie-list__search-form {
+        width: 90%;
+    }
+
+
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: -35px;
+    }
+
+
+    .movie-list__body.watchlist .movie-list__body--remove-btn {
+        text-align: center;
+    }
+
+    .movie-list__row {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+
+    }
+}
+
+
+@media (max-width: 400px) {
+    .movie-list__form-container.index .movie-list__search-form {
+        top: 305px;
+    }
+
+}
+
+
+/***** END Media Queries ****/  
