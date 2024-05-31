@@ -1,0 +1,22 @@
+{
+  "name": "movie-watchlist-hubspot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezekielswanson/movie-watchlist-hubspot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezekielswanson/movie-watchlist-hubspot/issues"
+  },
+  "homepage": "https://github.com/ezekielswanson/movie-watchlist-hubspot#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

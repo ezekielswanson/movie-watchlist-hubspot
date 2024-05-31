@@ -1,5 +1,7 @@
 
 document.querySelector('form button').addEventListener('click', (e) => {
+    
+    //Get search input value
     const movieTitle = document.querySelector('#searchInput').value;
 
     //Initial fetch
@@ -20,25 +22,26 @@ async function fetchMoviesBySearch(videoQuery) {
     try {
         const searchResponse = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&s=${videoQuery}`);
         const searchData = await searchResponse.json();
-        //console.log(searchData);
+        console.log(searchData);
 
-        //Defining parameter
+        //Invoking getMovieIdArray
         getMovieId(searchData)
     }
 
     catch (error) {
-        console.error('No movie with that title found. Please check spelling or try another movie!', error);
+        console.error('No movie with that title found. Please check spelling or try searching another movie.', error);
     }
 }
 
 
 //Fetch by ID
 async function getMovieId(moviesReturned) {
+    console.log(moviesReturned)
     try {
         let movieData = moviesReturned.Search.map(async movie => {
             const movieId = movie.imdbID;
             const response = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`);
-            console.log(response)
+            //console.log(response)
             return await response.json();
         });
         //Defining parameter
