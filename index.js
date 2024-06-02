@@ -34,7 +34,7 @@ async function fetchMoviesBySearch(videoQuery) {
 }
 
 
-//Fetch by ID to store in localStorage
+/* Fetch by ID to store in localStorage
 async function getMovieId(moviesReturned) {
     console.log(moviesReturned)
     try {
@@ -52,6 +52,37 @@ async function getMovieId(moviesReturned) {
         console.error('Error fetching movie id:', error);
     }
 }
+*/
+
+//Fetch by ID to store in localStorage
+async function getMovieId(moviesReturned) {
+    console.log(moviesReturned)
+    try {
+        // Using Promise.all to ensure all fetch requests are completed
+        let movieData = await Promise.all(moviesReturned.Search.map(async movie => {
+            const movieId = movie.imdbID;
+            const response = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`);
+            
+            // Check if the response is OK
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            // Return the JSON data if the response is successful
+            return await response.json();
+        }));
+
+        // Calling renderMovies with the fully resolved movieData
+        renderMovies(movieData);
+
+        // Returning the resolved movie data
+        return movieData;
+    } catch (error) {
+        // Improved error logging
+        console.error('Error fetching movie id:', error);
+    }
+}
+f
 
 
 
