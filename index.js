@@ -66,14 +66,16 @@ async function getMovieId(moviesReturned) {
             // Check if the response is OK
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
+                
             }
+        
             
             // Return the JSON data if the response is successful
             return await response.json();
         }));
 
         // Calling renderMovies with the fully resolved movieData
-        renderMovies(movieData);
+        //renderMovies(movieData);
 
         // Returning the resolved movie data
         return movieData;
@@ -82,7 +84,10 @@ async function getMovieId(moviesReturned) {
         console.error('Error fetching movie id:', error);
     }
 }
-f
+
+
+//Need to add the redner movie function now look at the line above
+//renderMovies(movieData);
 
 
 
