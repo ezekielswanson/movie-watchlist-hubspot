@@ -9,9 +9,9 @@ document.querySelector('form button').addEventListener('click', (e) => {
 
     //Handles css clean up on click
     e.preventDefault(); 
-    removeFilmIcon()
-    reducePadding() 
-    showLoader()
+    removeFilmIcon();
+    reducePadding();
+    showLoader();
 
 
 });
@@ -34,25 +34,7 @@ async function fetchMoviesBySearch(videoQuery) {
 }
 
 
-/* Fetch by ID to store in localStorage
-async function getMovieId(moviesReturned) {
-    console.log(moviesReturned)
-    try {
-        let movieData = moviesReturned.Search.map(async movie => {
-            const movieId = movie.imdbID;
-            const response = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`);
-            //console.log(response)
-            return await response.json();
-        });
-        //Defining parameter
-        renderMovies(movieData)
 
-        return await Promise.all(movieData);
-    } catch (error) {
-        console.error('Error fetching movie id:', error);
-    }
-}
-*/
 
 //Fetch by ID to store in localStorage
 async function getMovieId(moviesReturned) {
@@ -85,6 +67,26 @@ async function getMovieId(moviesReturned) {
     }
 }
 
+
+/* Fetch by ID to store in localStorage
+async function getMovieId(moviesReturned) {
+    console.log(moviesReturned)
+    try {
+        let movieData = moviesReturned.Search.map(async movie => {
+            const movieId = movie.imdbID;
+            const response = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`);
+            //console.log(response)
+            return await response.json();
+        });
+        //Defining parameter
+        renderMovies(movieData)
+
+        return await Promise.all(movieData);
+    } catch (error) {
+        console.error('Error fetching movie id:', error);
+    }
+}
+*/
 
 //Need to add the redner movie function now look at the line above
 //renderMovies(movieData);
