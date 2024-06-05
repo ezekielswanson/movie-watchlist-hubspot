@@ -1,4 +1,13 @@
 
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+app.use(express.json());
+
+// Middleware to parse incoming requests with URL-encoded payloads
+app.use(express.urlencoded({ extended: true }));
+
 document.querySelector('form button').addEventListener('click', (e) => {
     
     //Get search input value
