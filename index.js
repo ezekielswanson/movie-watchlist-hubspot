@@ -81,8 +81,7 @@ async function getMovieId(moviesReturned) {
 
 
 
-//Need to add the render movie function now look at the line above
-//renderMovies(movieData);
+//Render movies
 function renderMovies(movieHTMLData) {
     console.log(movieHTMLData);
 
