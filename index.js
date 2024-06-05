@@ -7,6 +7,9 @@ document.querySelector('form button').addEventListener('click', (e) => {
     //Initial fetch - argument think -> "the data the function's going to use"
     fetchMoviesBySearch(movieTitle);
 
+    //document.querySelector('#searchInput').value = '';
+
+
     //Handles css clean up on click
     e.preventDefault(); 
     removeFilmIcon();
@@ -107,20 +110,14 @@ function renderMovies(movieHTMLData) {
         `;
     }).join('');
 
-    
 
-    //insertHTML();
-    hideLoader();
-    
-
- 
-}
-
-
-function insertHTML() {
     const listContainer = document.querySelector('.movie-list__body');
     listContainer.innerHTML = movieHTMLDisplay;
+
+    hideLoader();
+    
 }
+
 
 
 
