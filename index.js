@@ -32,6 +32,8 @@ document.querySelector('form button').addEventListener('click', (e) => {
 //Fetch by user Search to display list of movies
 async function fetchMoviesBySearch(videoQuery) {
     try {
+
+        //videoQuery is defined with the movieTitle.value in the function above
         const searchResponse = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&s=${videoQuery}`);
         const searchData = await searchResponse.json();
         //console.log(searchData);
