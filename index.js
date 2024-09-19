@@ -13,7 +13,7 @@ document.querySelector('form button').addEventListener('click', (e) => {
     //Get search input value
     const movieTitle = document.querySelector('#searchInput').value;
 
-    //Initial fetch - argument think -> "the data the function's going to use"
+    //Initial fetch - argument think -> "the data the function using the parameter is using"
     fetchMoviesBySearch(movieTitle);
 
     //document.querySelector('#searchInput').value = '';
